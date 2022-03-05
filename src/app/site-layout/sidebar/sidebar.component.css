@@ -1,0 +1,10 @@
+.list-group{
+    border-radius: 20px;
+}
+.list-group-item{
+    color: aliceblue;
+    height: max-content;
+    font-size: 2vh;
+    
+}
+

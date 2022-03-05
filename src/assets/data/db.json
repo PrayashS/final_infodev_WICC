@@ -1,0 +1,80 @@
+
+{
+    "products": [
+      { "id": 1, 
+        "productName": "shirt1",
+        "category_id": 5,
+        "descriptions": "description first",
+        "price": 300,
+        "is_available": true,
+        "productImg":"http://localhost:4200/assets/1.jpg",
+        "rating":4,
+        "review":150,
+        "vendor_name":"abc shop",
+        "waranty":1
+        },
+        { "id": 2, 
+          "productName": "shirt2",
+          "category_id": 2,
+          "descriptions": "description second",
+          "price": 400,
+          "is_available": true,
+          "productImg":"http://localhost:4200/assets/2.jpg",
+          "rating":4,
+          "review":150,
+          "vendor_name":"abc shop",
+          "waranty":1
+          },
+            { "id": 3, 
+              "productName": "shirt3",
+              "category_id": 5,
+              "descriptions": "description third",
+              "price": 300,
+              "is_available": true,
+              "productImg":"http://localhost:4200/assets/3.jpg",
+              "rating":4,
+              "review":150,
+              "vendor_name":"abc shop",
+              "waranty":1
+                },
+                { "id": 4, 
+                  "productName": "shirt4",
+                  "category_id": 3,
+                  "descriptions": "description four",
+                  "price": 300,
+                  "is_available": true,
+                  "productImg":"http://localhost:4200/assets/4.jpg",
+                  "rating":4,
+                  "review":150,
+                  "vendor_name":"abc shop",
+                  "waranty":1
+                    }
+                    ,
+                { "id": 5, 
+                  "productName": "shirt5",
+                  "category_id": 7,
+                  "descriptions": "description five",
+                  "price": 800,
+                  "is_available": true,
+                  "productImg":"http://localhost:4200/assets/5.jpg",
+                  "rating":4,
+                  "review":150,
+                  "vendor_name":"abc shop",
+                  "waranty":1
+                    }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 },
+      { "id": 2, "body": "some comment", "postId": 1 }
+    ],
+    "categories": [
+      { "id": 1, "categoryName": "Electronics" },
+      { "id": 2, "categoryName": "Men"},
+      { "id": 3, "categoryName": "Women"},
+      { "id": 4, "categoryName": "Home & Furniture" },
+      { "id": 5, "categoryName": "Baby & Kids" }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }
