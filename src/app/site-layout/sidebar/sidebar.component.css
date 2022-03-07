@@ -1,10 +1,19 @@
 .list-group{
-    border-radius: 20px;
+    padding-top:4px ;
 }
+
+
 .list-group-item{
     color: aliceblue;
     height: max-content;
     font-size: 2vh;
     
 }
-
+.card a{
+    background-color: powderblue;
+    text-align: center;
+}
+.list-group :hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}

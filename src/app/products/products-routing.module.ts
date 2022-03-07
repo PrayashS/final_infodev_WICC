@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'update-product/:id', component:UpdateProductComponent},
   // { path: 'list-product', component:ViewAllProductComponent},
   { path: 'view-product/:id', component:ViewProductComponent},
-  { path: 'search-category', component:ViewProductByCategoryComponent},
-  { path: 'search-date', component:ViewProductByDateComponent}
+  { path: 'category/:id', component:ViewProductByCategoryComponent},
+  { path: 'searchdate', component:ViewProductByDateComponent}
 ];
 
 @NgModule({

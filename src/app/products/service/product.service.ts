@@ -27,11 +27,11 @@ export class ProductService {
     return this.httpClient.delete<Product>(baseUrl);
   }
   searchCategoryProduct(categoryId:any):Observable<Product>{
-    const baseUrl="http://localhost:3000/products/category="+categoryId;
+    const baseUrl="http://localhost:3000/products?categoryId="+categoryId;
     return this.httpClient.get<Product>(baseUrl);
   }
   searchDateProduct(dateParams:any):Observable<Product>{
-    const baseUrl="http://localhost:3000/products/category="+dateParams;
+    const baseUrl="http://localhost:3000/products/date="+dateParams;
     return this.httpClient.get<Product>(baseUrl);
   }
   getCategory(){
