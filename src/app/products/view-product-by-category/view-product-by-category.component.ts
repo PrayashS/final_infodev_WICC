@@ -10,18 +10,27 @@ import { ProductService } from '../service/product.service';
   styleUrls: ['./view-product-by-category.component.css']
 })
 export class ViewProductByCategoryComponent implements OnInit {
-searchCategory: Category | any
+searchCategory: Category | any;
 productList: Product | any;
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(data =>{
-      this.searchCategory = data['id'];
-
-      this.productService.searchCategoryProduct(this.searchCategory).subscribe(categoryData =>{
+    const id = this.activatedRoute.snapshot.paramMap.get('id')
+      // this.searchCategory = data['id'];
+      
+      this.productService.searchCategoryProduct(id).subscribe(categoryData =>{
         this.productList = categoryData;
+        console.log(categoryData);
       })
-    })
+    // this.activatedRoute.queryParams.subscribe(data => {
+    //   this.searchCategory = data['id'];
+
+    //   this.productService.searchCategoryProduct(this.searchCategory).subscribe(categoryData => {
+    //     this.productList = categoryData;
+    //   })
+    // })
+    
+    }
   }
 
-}
+

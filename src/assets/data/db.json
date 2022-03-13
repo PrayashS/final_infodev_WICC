@@ -1,19 +1,7 @@
 
 {
     "products": [
-      { "id": 1, 
-        "productName": "shirt1",
-        "categoryId": 1,
-        "descriptions": "description first",
-        "price": 300,
-        "is_available": true,
-        "productImg":"http://localhost:4200/assets/images/1.jpg",
-        "rating":4,
-        "review":150,
-        "vendor_name":"abc shop",
-        "waranty":1
-        },
-        { "id": 2, 
+        { "id": 1, 
           "productName": "shirt2",
           "categoryId": 1,
           "descriptions": "description second",
@@ -25,7 +13,7 @@
           "vendor_name":"abc shop",
           "waranty":1
           },
-            { "id": 3, 
+            { "id": 2, 
               "productName": "shirt3",
               "categoryId": 2,
               "descriptions": "description third",
@@ -37,7 +25,7 @@
               "vendor_name":"abc shop",
               "waranty":1
                 },
-                { "id": 4, 
+                { "id": 3, 
                   "productName": "shirt4",
                   "categoryId": 3,
                   "descriptions": "description four",
@@ -50,7 +38,7 @@
                   "waranty":1
                     }
                     ,
-                { "id": 5, 
+                { "id": 4, 
                   "productName": "shirt5",
                   "categoryId": 4,
                   "descriptions": "description five",
@@ -61,7 +49,19 @@
                   "review":150,
                   "vendor_name":"abc shop",
                   "waranty":1
-                    }
+                    },
+                    { "id": 5, 
+                      "productName": "shirt5",
+                      "categoryId": 5,
+                      "descriptions": "description five",
+                      "price": 800,
+                      "is_available": true,
+                      "productImg":"http://localhost:4200/assets/images/1.jpg",
+                      "rating":4,
+                      "review":150,
+                      "vendor_name":"abc shop",
+                      "waranty":1
+                        }
     ],
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 },

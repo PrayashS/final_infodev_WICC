@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from '../product';
 import { ProductService } from '../service/product.service';
 
@@ -13,7 +12,7 @@ export class ViewAllProductComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productService.viewProduct().subscribe(data=>{
+    this.productService.showProduct().subscribe(data=>{
       this.productList = data;
     })
     

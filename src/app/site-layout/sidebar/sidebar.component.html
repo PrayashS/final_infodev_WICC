@@ -1,6 +1,6 @@
 <div class="card">
-<a href="products" class="list-group-item bg-dark" >View All Products</a>
+<a routerLink="products" class="list-group-item bg-dark" >View All Products</a>
 </div>
 <div class="list-group" *ngFor="let catg of categoryList">
-    <a href="products/category/{{catg.id}}" class="list-group-item bg-dark" >{{catg.categoryName}}</a>
+    <a routerLink ="/products/category/{{catg.id}}" class="list-group-item bg-dark" >{{catg.categoryName}}</a>
 </div>

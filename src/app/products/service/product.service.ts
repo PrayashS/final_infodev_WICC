@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from 'src/app/site-layout/category';
@@ -14,7 +14,11 @@ export class ProductService {
     const baseUrl="http://localhost:3000/products";
     return this.httpClient.post<Product>(baseUrl, productBody);
   }
-  viewProduct():Observable<Product>{
+  viewProduct(categoryId: any):Observable<Product>{
+    const baseUrl="http://localhost:3000/products/"+ categoryId;
+    return this.httpClient.get<Product>(baseUrl);
+  }
+  showProduct():Observable<Product>{
     const baseUrl="http://localhost:3000/products/";
     return this.httpClient.get<Product>(baseUrl);
   }
@@ -27,9 +31,16 @@ export class ProductService {
     return this.httpClient.delete<Product>(baseUrl);
   }
   searchCategoryProduct(categoryId:any):Observable<Product>{
-    const baseUrl="http://localhost:3000/products?categoryId="+categoryId;
-    return this.httpClient.get<Product>(baseUrl);
+    const baseUrl="http://localhost:3000/products/"
+    return this.httpClient.get<Product>(baseUrl, {
+      params: new HttpParams().set('categoryId', categoryId)
+      });
   }
+  // searchCategoryProduct(categoryId:any):Observable<Product>{
+  //   const baseUrl="http://localhost:3000/products?category=" +categoryId;
+  //   return this.httpClient.get<Product>(baseUrl);
+  // }
+
   searchDateProduct(dateParams:any):Observable<Product>{
     const baseUrl="http://localhost:3000/products/date="+dateParams;
     return this.httpClient.get<Product>(baseUrl);
