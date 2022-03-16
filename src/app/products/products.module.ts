@@ -12,6 +12,7 @@ import { ViewProductByCategoryComponent } from './view-product-by-category/view-
 import { ViewAllProductComponent } from './view-all-product/view-all-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { HttpClientModule} from '@angular/common/http';
     DeleteProductComponent,
     ViewProductByDateComponent,
     ViewProductByCategoryComponent,
-    ViewAllProductComponent
+    ViewAllProductComponent,
   ],
   imports: [
     CommonModule,

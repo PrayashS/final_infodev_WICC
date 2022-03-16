@@ -1,80 +1,178 @@
-
 {
-    "products": [
-        { "id": 1, 
-          "productName": "shirt2",
-          "categoryId": 1,
-          "descriptions": "description second",
-          "price": 400,
-          "is_available": true,
-          "productImg":"http://localhost:4200/assets/images/2.jpg",
-          "rating":4,
-          "review":150,
-          "vendor_name":"abc shop",
-          "waranty":1
-          },
-            { "id": 2, 
-              "productName": "shirt3",
-              "categoryId": 2,
-              "descriptions": "description third",
-              "price": 300,
-              "is_available": true,
-              "productImg":"http://localhost:4200/assets/images/3.jpg",
-              "rating":4,
-              "review":150,
-              "vendor_name":"abc shop",
-              "waranty":1
-                },
-                { "id": 3, 
-                  "productName": "shirt4",
-                  "categoryId": 3,
-                  "descriptions": "description four",
-                  "price": 300,
-                  "is_available": true,
-                  "productImg":"http://localhost:4200/assets/images/4.jpg",
-                  "rating":4,
-                  "review":150,
-                  "vendor_name":"abc shop",
-                  "waranty":1
-                    }
-                    ,
-                { "id": 4, 
-                  "productName": "shirt5",
-                  "categoryId": 4,
-                  "descriptions": "description five",
-                  "price": 800,
-                  "is_available": true,
-                  "productImg":"http://localhost:4200/assets/images/5.jpg",
-                  "rating":4,
-                  "review":150,
-                  "vendor_name":"abc shop",
-                  "waranty":1
-                    },
-                    { "id": 5, 
-                      "productName": "shirt5",
-                      "categoryId": 5,
-                      "descriptions": "description five",
-                      "price": 800,
-                      "is_available": true,
-                      "productImg":"http://localhost:4200/assets/images/1.jpg",
-                      "rating":4,
-                      "review":150,
-                      "vendor_name":"abc shop",
-                      "waranty":1
-                        }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 },
-      { "id": 2, "body": "some comment", "postId": 1 }
-    ],
-    "categories": [
-      { "id": 1, "categoryName": "Electronics" },
-      { "id": 2, "categoryName": "Men"},
-      { "id": 3, "categoryName": "Women"},
-      { "id": 4, "categoryName": "Home & Furniture" },
-      { "id": 5, "categoryName": "Baby & Kids" }
-    ],
-    "profile": {
-      "name": "typicode"
+  "products": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2,
+      "productName": "shirt3",
+      "categoryId": 2,
+      "descriptions": "description third",
+      "price": 300,
+      "is_available": true,
+      "productImg": "http://localhost:4200/assets/images/3.jpg",
+      "rating": 4,
+      "review": 150,
+      "vendor_name": "abc shop",
+      "waranty": 1
+    },
+    {
+      "id": 3,
+      "productName": "shirt4",
+      "categoryId": 3,
+      "descriptions": "description four",
+      "price": 300,
+      "is_available": true,
+      "productImg": "http://localhost:4200/assets/images/4.jpg",
+      "rating": 4,
+      "review": 150,
+      "vendor_name": "abc shop",
+      "waranty": 1
+    },
+    {
+      "id": 4,
+      "productName": "shirt5",
+      "categoryId": 4,
+      "descriptions": "description five",
+      "price": 800,
+      "is_available": true,
+      "productImg": "http://localhost:4200/assets/images/5.jpg",
+      "rating": 4,
+      "review": 150,
+      "vendor_name": "abc shop",
+      "waranty": 1
+    },
+    {
+      "id": 5,
+      "productName": "shirt5",
+      "categoryId": 5,
+      "descriptions": "description five",
+      "price": 800,
+      "is_available": true,
+      "productImg": "http://localhost:4200/assets/images/1.jpg",
+      "rating": 4,
+      "review": 150,
+      "vendor_name": "abc shop",
+      "waranty": 1
+    },
+    {
+      "id": 112,
+      "categoryId": "1",
+      "productName": "asdf",
+      "description": "sdf",
+      "rating": "1",
+      "price": "555",
+      "productImg": "",
+      "isAvailable": 1,
+      "color": "dcx",
+      "reviews": "3"
+    },
+    {
+      "id": 113,
+      "categoryId": "2",
+      "productName": "kkk",
+      "description": "sdf",
+      "rating": "1",
+      "price": "555",
+      "productImg": "",
+      "isAvailable": 1,
+      "color": "dcx",
+      "reviews": "3"
+    },
+    {
+      "product_name": "llllll",
+      "product_category": "5",
+      "product_description": "slikjalk",
+      "product_rating": "3",
+      "product_color": "red",
+      "product_available": "1",
+      "product_price": "600",
+      "product_review": "3",
+      "id": 114
+    },
+    {
+      "product_name": "PraySh",
+      "product_category": "5",
+      "product_description": "ramro cxa",
+      "product_rating": "4",
+      "product_color": "red",
+      "product_available": "1",
+      "product_price": "500",
+      "product_review": "5",
+      "id": 115
+    },
+    {
+      "id": 200,
+      "productName": "shirt10",
+      "categoryId": 5,
+      "descriptions": "description second",
+      "price": 400,
+      "is_available": true,
+      "productImg": "http://localhost:4200/assets/images/2.jpg",
+      "rating": 4,
+      "review": 150,
+      "vendor_name": "abc shop",
+      "waranty": 1
+    },
+    {
+      "id": 201
+    },
+    {
+      "productName": "aalu",
+      "categoryId": "5",
+      "descriptions": "ramro",
+      "rating": "5",
+      "is_available": "1",
+      "price": "500",
+      "review": "4",
+      "id": 202
+    },
+    {
+      "productName": "sa",
+      "categoryId": "4",
+      "descriptions": "asdg",
+      "rating": "2",
+      "is_available": "1",
+      "price": "200",
+      "review": "1",
+      "id": 203
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Electronics"
+    },
+    {
+      "id": 2,
+      "categoryName": "Men"
+    },
+    {
+      "id": 3,
+      "categoryName": "Women"
+    },
+    {
+      "id": 4,
+      "categoryName": "Home & Furniture"
+    },
+    {
+      "id": 5,
+      "categoryName": "Baby & Kids"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}

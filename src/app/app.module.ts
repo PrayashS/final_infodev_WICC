@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrdersModule} from './orders/orders.module'
 import { SiteLayoutModule } from './site-layout/site-layout.module';
 import { HttpClientModule} from '@angular/common/http';
+import { ProductsComponent } from './products/products.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HttpClientModule} from '@angular/common/http';
     NgbModule,
     OrdersModule,
     SiteLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductsModule
 
   ],
   providers: [],

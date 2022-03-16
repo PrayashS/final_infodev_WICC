@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { ProductService } from '../service/product.service';
 
 @Component({
@@ -9,10 +8,21 @@ import { ProductService } from '../service/product.service';
 })
 export class AddProductComponent implements OnInit {
   
-
-  constructor(private productService: ProductService, formBuilder: FormBuilder) { }
+  
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
 
+  addNewProduct(form:any){
+    console.log(form.value);
+    this.productService.createProduct(form.value).subscribe(data =>{
+      
+      console.log(data);
+      
+    }, err => {
+      console.log(err)
+    });
+    form.reset();
+  }
 }

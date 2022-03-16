@@ -10,9 +10,9 @@ export class ProductService {
 
   constructor(private httpClient:HttpClient) { }
 
-  createProduct(productBody:any):Observable<Product>{
+  createProduct(productBody:any):Observable <any>{
     const baseUrl="http://localhost:3000/products";
-    return this.httpClient.post<Product>(baseUrl, productBody);
+    return this.httpClient.post(baseUrl, productBody);
   }
   viewProduct(categoryId: any):Observable<Product>{
     const baseUrl="http://localhost:3000/products/"+ categoryId;

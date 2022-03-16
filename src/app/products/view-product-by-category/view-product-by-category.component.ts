@@ -12,7 +12,8 @@ import { ProductService } from '../service/product.service';
 export class ViewProductByCategoryComponent implements OnInit {
 searchCategory: Category | any;
 productList: Product | any;
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService) { }
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService) { 
+  }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id')
@@ -20,7 +21,6 @@ productList: Product | any;
       
       this.productService.searchCategoryProduct(id).subscribe(categoryData =>{
         this.productList = categoryData;
-        console.log(categoryData);
       })
     // this.activatedRoute.queryParams.subscribe(data => {
     //   this.searchCategory = data['id'];
