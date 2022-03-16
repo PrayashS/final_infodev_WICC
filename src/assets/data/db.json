@@ -56,28 +56,20 @@
       "waranty": 1
     },
     {
-      "id": 112,
+      "productName": "asdfggg",
       "categoryId": "1",
-      "productName": "asdf",
-      "description": "sdf",
       "rating": "1",
+      "is_available": "1",
       "price": "555",
-      "productImg": "",
-      "isAvailable": 1,
-      "color": "dcx",
-      "reviews": "3"
+      "id": 112
     },
     {
-      "id": 113,
+      "productName": "kkk;;;",
       "categoryId": "2",
-      "productName": "kkk",
-      "description": "sdf",
       "rating": "1",
+      "is_available": "1",
       "price": "555",
-      "productImg": "",
-      "isAvailable": 1,
-      "color": "dcx",
-      "reviews": "3"
+      "id": 113
     },
     {
       "product_name": "llllll",
@@ -118,24 +110,13 @@
       "id": 201
     },
     {
-      "productName": "aalu",
-      "categoryId": "5",
-      "descriptions": "ramro",
-      "rating": "5",
-      "is_available": "1",
-      "price": "500",
-      "review": "4",
       "id": 202
     },
     {
-      "productName": "sa",
-      "categoryId": "4",
-      "descriptions": "asdg",
-      "rating": "2",
-      "is_available": "1",
-      "price": "200",
-      "review": "1",
       "id": 203
+    },
+    {
+      "id": 204
     }
   ],
   "comments": [

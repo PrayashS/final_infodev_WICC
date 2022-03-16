@@ -25,7 +25,7 @@ export class UpdateProductComponent implements OnInit {
   }
   updateProduct(form:any){
     console.log(form.value);
-    this.productService.updateProduct(this.productID, this.updateProduct).subscribe(data =>{
+    this.productService.updateProduct(this.productID, form.value).subscribe(data =>{
       
       console.log(data);
       
