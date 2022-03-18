@@ -1,1 +1,21 @@
-<p>admin-dashboard works!</p>
+<table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of userData">
+        <td>{{data.fullName}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.mobile}}</td>
+        <td>
+          <!-- <button class="btn btn-info" (click)="editUserData(data)" >Edit</button> -->
+          <button class="btn btn-danger"(click)="deleteUserData(data)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
