@@ -117,6 +117,16 @@
     },
     {
       "id": 204
+    },
+    {
+      "productName": "sdfs",
+      "categoryId": "4",
+      "descriptions": "SDf",
+      "rating": "3",
+      "is_available": "1",
+      "price": "44",
+      "review": "4",
+      "id": 205
     }
   ],
   "comments": [
@@ -153,7 +163,13 @@
       "categoryName": "Baby & Kids"
     }
   ],
-  "profile": {
-    "name": "typicode"
+  "login": {
+    "username": "bb",
+    "password": "123456"
+  },
+  "register": {
+    "username": "bb",
+    "email": "b@gmail.com",
+    "password": "123456"
   }
 }

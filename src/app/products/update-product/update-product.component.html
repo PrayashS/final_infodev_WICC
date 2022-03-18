@@ -58,7 +58,7 @@
             class="custom-select"
             required
             name="is_available"
-            
+            [(ngModel)]="productDetails.is_available"
             ngModel
           >
             <option selected value="">Choose...</option>
@@ -82,7 +82,7 @@
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationServer02">Reviews</label>
-        <select class="custom-select" required name="review">
+        <select class="custom-select" required name="review" [(ngModel)]="productDetails.review" ngModel>
           <option selected value="">Choose...</option>
           <option value="1">1</option>
           <option value="2">2</option>

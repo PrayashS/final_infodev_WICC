@@ -7,8 +7,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrdersModule} from './orders/orders.module'
 import { SiteLayoutModule } from './site-layout/site-layout.module';
 import { HttpClientModule} from '@angular/common/http';
-import { ProductsComponent } from './products/products.component';
 import { ProductsModule } from './products/products.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import { ProductsModule } from './products/products.module';
     OrdersModule,
     SiteLayoutModule,
     HttpClientModule,
-    ProductsModule
+    ProductsModule,
+    AuthModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    DashboardModule
 
   ],
   providers: [],
