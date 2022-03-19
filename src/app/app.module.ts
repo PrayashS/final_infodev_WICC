@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SiteLayoutModule,
     HttpClientModule,
     ProductsModule,
+    FormsModule,
     AuthModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
