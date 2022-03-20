@@ -23,29 +23,31 @@
           <a class="nav-link" href="#contact">Contact</a>
         </li>
         <span *ngIf="!isLogedin" class="d-flex">
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/register">Register</a>
-        </li>
-        
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/register">Register</a>
+          </li>
         </span>
-        <span *ngIf="isLogedin"><li class="nav-item">
-            <button class="btn btn-danger" (click)="logout()">Logout</button>
-          </li></span>
+        <span *ngIf="isLogedin"
+          ><li class="nav-item">
+            <button class="btn btn-danger" (click)="logout()">
+              <i class="fas fa-sign-out-alt sm"></i>
+            </button></li
+        ></span>
 
-          <div class="">
-            <div class="cart_icon">
-              <button routerLink="/cart/addcart" class="btn btn-primar">
-                <span style="color: red;"><i class="fa fa-shopping-cart"></i></span>
-                <div class="cart_value">{{totalItem}}</div>
-              </button>
-            </div>
+        <div class="">
+          <div class="cart_icon">
+            <button routerLink="/cart/addcart" class="btn btn-primar">
+              <span style="color: red"
+                ><i class="fa fa-shopping-cart"></i
+              ></span>
+              <div class="cart_value">{{ totalItem }}</div>
+            </button>
           </div>
+        </div>
       </ul>
-
     </div>
   </div>
- 
 </nav>

@@ -199,10 +199,25 @@
   ],
   "register": [
     {
-      "username": "Don",
-      "email": "d@gmail.com",
+      "fullname": "Ram",
+      "email": "ram@gmail.com",
+      "mobile": 9822556622,
       "password": "123456",
       "id": 1
+    },
+    {
+      "fullname": "Shyam",
+      "email": "shyam@gmail.com",
+      "mobile": 9684654654,
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "fullname": "Hari",
+      "email": "hari@gmail.com",
+      "mobile": 98456466,
+      "password": "123456",
+      "id": 3
     }
   ],
   "cart": [

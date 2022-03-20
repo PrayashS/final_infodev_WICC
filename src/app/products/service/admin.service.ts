@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { dataModel } from 'src/app/dashboard/admin-dashboard/admin.model';
+import { dataModel } from 'src/app/dashboard/dashboard/admin-dashboard/admin.model';
 
 @Injectable({
   providedIn: 'root'
