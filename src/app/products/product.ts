@@ -1,4 +1,5 @@
 export interface Product {
+    length: any;
     productId: string;
     categoryId: number;
     productName: string;
@@ -9,5 +10,7 @@ export interface Product {
     isAvailable: string;
     color: string;
     review: number;
+    quantity: number;
+    total: number;
 
 }

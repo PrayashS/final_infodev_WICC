@@ -7,20 +7,21 @@
         <th scope="col">Description</th>
         <th scope="col">Rating</th>
         <th scope="col">Product Image</th>
-        <th scope="col">Is Available</th>
+        <th scope="col">Available</th>
         <th scope="col">Color</th>
         <th scope="col">Review</th>
         <th scope="col">Price</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let data of productList">
         <td>{{data.productName}}</td>
         <td>{{data.categoryId}}</td>
-        <td>{{data.description}}</td>
+        <td>{{data.descriptions}}</td>
         <td>{{data.rating}}</td>
         <td>{{data.productImg}}</td>
-        <td>{{data.isAvailable}}</td>
+        <td>{{data.is_available}}</td>
         <td>{{data.color}}</td>
         <td>{{data.review}}</td>
         <td>{{data.price}}</td>

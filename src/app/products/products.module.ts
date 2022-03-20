@@ -13,6 +13,7 @@ import { ViewAllProductComponent } from './view-all-product/view-all-product.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { SiteLayoutModule } from '../site-layout/site-layout.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BrowserModule } from '@angular/platform-browser';
     ProductsRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SiteLayoutModule
   ]
 })
 export class ProductsModule { }

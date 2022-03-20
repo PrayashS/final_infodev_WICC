@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FormsModule } from '@angular/forms';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     AuthModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    DashboardModule
+    DashboardModule,
+    CartModule
 
   ],
   providers: [],

@@ -1,69 +1,42 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/products/service/auth.service';
-import { MessageService } from 'src/app/products/service/message.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('passw') pass !: ElementRef
 
-  loginForm:FormGroup
-  constructor(private fb:FormBuilder,private authService:AuthService,private messageService:MessageService,private router:Router) {
-    this.loginForm  = fb.group({
-      username:['',[Validators.required]],
-      password:['',[Validators.required]]
-    })
-   }
+  public loginForm!: FormGroup
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router,private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email:[''],
+      password:['']
+    });
   }
-
-  get lfControls()
-  {
-    return this.loginForm.controls;
-  }
-
-  loginFormSubmit()
-  {
-    if(this.loginForm.valid)
-    {
-      this.authService.userLogin(this.loginForm.value).subscribe(res=>{
-        this.authService.saveToken(res.token)
-        this.messageService.showSuccessMessage("user logged in sucessfully")
-        this.loginForm.reset()
-        this.router.navigate(['/'])
-
+  login(){
+    if(this.loginForm.invalid){
+      return;
+    }
+    this.httpClient.get<any>("http://localhost:3000/register").subscribe(data =>{
+      const user = data.find((a:any)=>{
+        return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+      });
+      if(user){
+        alert("Login Success");
+        this.authService.saveToken(this.loginForm.value['email'])
+        this.loginForm.reset();
+        this.router.navigate(['products'])
+      }else{
+        alert("Your email or password do not match")
+      }
       },err=>{
-        let errors = err.error
-        for(let e in errors )
-        {
-          errors[e].forEach((eErrors:any)=>{
-            this.messageService.showErrorMessage(eErrors);
-          })
-        }
-      })
-    }
-
+        alert("Something went wrong")
+    });
   }
-
-  hideShowPass()
-  {
-    // console.log(this.pass.nativeElement.type)
-    let type = this.pass.nativeElement.type
-    if(type==='password')
-    {
-      this.pass.nativeElement.type='text'
-    }
-    else{
-      this.pass.nativeElement.type='password'
-    }
-  }
-
-
-
 }

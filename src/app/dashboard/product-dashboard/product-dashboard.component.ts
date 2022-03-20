@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/products/service/product.service';
   styleUrls: ['./product-dashboard.component.css']
 })
 export class ProductDashboardComponent implements OnInit {
-  
+  productId:number = 0;
   productList:Product | any; 
   constructor(private productService: ProductService, activatedRoute: ActivatedRoute) { }
 

@@ -1,69 +1,34 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/products/service/auth.service';
-import { MessageService } from 'src/app/products/service/message.service';
-
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @ViewChild('pass') pass !: ElementRef
 
-  registerForm:FormGroup
-
-  constructor(private fb:FormBuilder, private authService:AuthService,private messageService:MessageService) {
-    this.registerForm  = fb.group({
-      username:['',[Validators.required]],
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required]]
-    })
-   }
+  public registerForm !: FormGroup;
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router:Router) { }
 
   ngOnInit(): void {
+    this.registerForm = this.formBuilder.group({
+      fullname:[''],
+      email:[''],
+      mobile:[''],
+      password:[''],
+
+    });
   }
-
-  get rfControls()
-  {
-    return this.registerForm.controls;
+  register(){
+    this.httpClient.post<any>("http://localhost:3000/register",this.registerForm.value).subscribe(data=>{
+      alert("Signup Successful");
+      this.registerForm.reset();
+      this.router.navigate(['login']);
+    },err=>{
+      alert("Something went wrong!")
+    })
+  
   }
-
-  registerFormSubmit()
-  {
-    if(this.registerForm.valid)
-    {
-      this.authService.userRegister(this.registerForm.value).subscribe((res: any)=>{
-        console.log(res)
-        this.messageService.showSuccessMessage("user registered sucessfully")
-        this.registerForm.reset()
-
-      },(err: { error: any; })=>{
-        console.log(err.error)
-        const error = err.error
-        for(let e in error)
-        {
-          error[e].forEach((error:any)=>{
-            this.messageService.showErrorMessage(error)
-          })
-        }
-      })
-    }
-  }
-
-  hideShowPass()
-  {
-    // console.log(this.pass.nativeElement.type)
-    let type = this.pass.nativeElement.type
-    if(type==='password')
-    {
-      this.pass.nativeElement.type='text'
-    }
-    else{
-      this.pass.nativeElement.type='password'
-    }
-
-    
-  }
-
 }

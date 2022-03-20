@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'order', component: ListOrderComponent },
+  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
+  { path: 'order', component: ListOrderComponent }
 ];
 
 @NgModule({

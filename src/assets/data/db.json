@@ -127,6 +127,28 @@
       "price": "44",
       "review": "4",
       "id": 205
+    },
+    {
+      "productName": "abc",
+      "categoryId": "3",
+      "color": "blue",
+      "descriptions": "alskdjglkj",
+      "rating": "3",
+      "is_available": "1",
+      "price": "500",
+      "review": "4",
+      "id": 206
+    },
+    {
+      "productName": "efg",
+      "categoryId": "3",
+      "color": "blue",
+      "descriptions": "ramro",
+      "rating": "3",
+      "is_available": "1",
+      "price": "5110",
+      "review": "4",
+      "id": 207
     }
   ],
   "comments": [
@@ -177,10 +199,25 @@
   ],
   "register": [
     {
-      "id": 1,
-      "fullName": "dd",
+      "username": "Don",
       "email": "d@gmail.com",
-      "password": "12345"
+      "password": "123456",
+      "id": 1
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productName": "shirt3",
+      "categoryId": 2,
+      "descriptions": "description third",
+      "price": 300,
+      "is_available": true,
+      "productImg": "http://localhost:4200/assets/images/3.jpg",
+      "rating": 4,
+      "review": 150,
+      "vendor_name": "abc shop",
+      "waranty": 1
     }
   ]
 }
