@@ -17,7 +17,6 @@ const routes: Routes = [
     path:'',component:ProductsComponent,
     children:[
       { path: 'view-all-product', component:ViewAllProductComponent },
-      { path: 'add-product', component:AddProductComponent},
       { path: 'delete-product', component:DeleteProductComponent},
       { path: 'update-product/:id', component:UpdateProductComponent},
       // { path: 'list-product', component:ViewAllProductComponent},

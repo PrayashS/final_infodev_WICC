@@ -3,8 +3,9 @@
     <img  alt="" class="card-img-top img-fluid" src="{{productData.productImg}}" alt="">
     <div class="card-body">
         <h3 class="card-title">{{productData.productName}}</h3>
-        <a routerLink="/products/update-product/{{productData.id}}">Update Product</a> | 
-        <a routerLink="/products/delete-product/{{productData.id}}">Delete Product</a>
+       
+        <!-- <a routerLink="/products/delete-product/{{productData.id}}">Delete Product</a> -->
+        <a (click)="deleteProduct(productData.id)">Dekete Product</a>
         <h4>{{productData.price}}</h4>
         <p class="card-text">{{productData.descriptions}}.</p>
         <span class="text-warining">{{productData.rating}} stars</span>

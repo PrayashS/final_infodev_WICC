@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SiteLayoutModule } from '../site-layout/site-layout.module';
 
 
 
@@ -20,7 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    SiteLayoutModule
   ]
 })
 export class AuthModule { }

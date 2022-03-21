@@ -11,17 +11,17 @@
 
 }
 .cart_icon i{
-    color: red;
-    font-size: 24px;
+    color: #fff;
+    font-size: 20px;
 }
 .cart_value {
     position: absolute;
-    top: -16px;
-    right: -32px;
-    background: #fff;
+    top: -5px;
+    right: -25px;
+    background: red;
     border: 1px solid #ccc;
     border-radius: 50%;
     padding: 4px 10px;
     font-weight: 800;
-    font-size: 16px;
+    font-size: 10px;
 }

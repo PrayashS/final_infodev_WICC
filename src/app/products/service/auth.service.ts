@@ -40,5 +40,14 @@ export class AuthService {
     const baseUrl="http://localhost:3000/profile"+"/isadmin/";
     return this.httpClient.get(baseUrl)
   }
+
+adminOrNot(id:any):Observable<any>{
+    const baseUrl="http://localhost:3000/register/";
+    return this.httpClient.get(baseUrl+id)
+  }
+
+
+
+
 }
 

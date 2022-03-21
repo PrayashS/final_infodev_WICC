@@ -25,9 +25,13 @@
         <td>{{data.color}}</td>
         <td>{{data.review}}</td>
         <td>{{data.price}}</td>
-        <td>
+        <td class="d-flex gap-3">
           <!-- <button class="btn btn-info" (click)="editUserData(data)" >Edit</button> -->
           <!-- <button class="btn btn-danger"(click)="deleteUserData(data)">Delete</button> -->
+         
+          <a routerLink="/products/update-product/{{data.id}}">Update Product</a> 
+          <button (click)="deleteProduct(data.id)" class="btn btn-danger btn-sm">Delete</button>
+          
         </td>
       </tr>
     </tbody>

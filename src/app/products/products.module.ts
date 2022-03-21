@@ -34,6 +34,10 @@ import { SiteLayoutModule } from '../site-layout/site-layout.module';
     HttpClientModule,
     ReactiveFormsModule,
     SiteLayoutModule
+  ],
+  exports:[
+    AddProductComponent,
+    UpdateProductComponent
   ]
 })
 export class ProductsModule { }

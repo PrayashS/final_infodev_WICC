@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListOrderComponent } from './orders/list-order/list-order.component';
+import { AboutUsComponent } from './site-layout/about-us/about-us.component';
+import { ContactComponent } from './site-layout/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,9 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
-  { path: 'order', component: ListOrderComponent }
+  { path: 'order', component: ListOrderComponent },
+  { path: 'aboutus', component:AboutUsComponent},
+  { path: 'contactus', component:ContactComponent}
 ];
 
 @NgModule({

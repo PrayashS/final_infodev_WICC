@@ -14,16 +14,6 @@
           />
         </div>
         <div class="col-md-6 mb-3">
-          <label for="validationServer02">Category Id</label>
-          <input
-            type="text"
-            class="form-control"
-            required
-            name="categoryId"
-            ngModel
-          />
-        </div>
-        <div class="col-md-6 mb-3">
           <label for="validationServer02">Color</label>
           <input
             type="text"
@@ -47,8 +37,19 @@
           </textarea>
         </div>
         <div class="col-md-6 mb-3">
-          <label>Product Image</label>
-          <input type="file" id="img" name="img" accept="image/*">
+          <label>Product Image</label>2.
+          <input type="url" id="img" name="productImg" ngModel>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationServer02">Category Id</label>
+          <select class="custom-select" required name="categoryId" ngModel>
+            <option selected value="">Choose...</option>
+            <option value="1">Electronics</option>
+            <option value="2">Men</option>
+            <option value="3">Women</option>
+            <option value="4">Home & Furniture</option>
+            <option value="5">Baby & Kids</option>
+          </select>
         </div>
         <div class="col-md-6 mb-3">
           <label>Rating</label>

@@ -7,6 +7,10 @@ import { ProductDashboardComponent } from './dashboard/product-dashboard/product
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideBarComponent } from './dashboard/side-bar/side-bar.component';
 import { HeaderComponent } from '../site-layout/header/header.component';
+import { ProductsModule } from '../products/products.module';
+import { ProductAddComponent } from './dashboard/product-add/product-add.component';
+import { SiteLayoutModule } from '../site-layout/site-layout.module';
+import { ProductUpdateComponent } from './dashboard/product-update/product-update.component';
 
 
 @NgModule({
@@ -15,11 +19,15 @@ import { HeaderComponent } from '../site-layout/header/header.component';
     ProductDashboardComponent,
     DashboardComponent,
     SideBarComponent,
+    ProductAddComponent,
+    ProductUpdateComponent,
     
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    ProductsModule,
+    SiteLayoutModule
   ]
 })
 export class DashboardModule { }

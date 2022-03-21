@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor() { }
+  constructor(private toastrService:ToastrService) { }
   showSuccessMessage(message:any){
-    console.log(message )
+    this.toastrService.success(message)
   }
   showErrorMessage(error:any){
-    console.log(error)
+    this.toastrService.error(error)
   }
 }

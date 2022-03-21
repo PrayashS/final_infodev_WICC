@@ -22,7 +22,10 @@ export class RegisterComponent implements OnInit {
     });
   }
   register(){
-    this.httpClient.post<any>("http://localhost:3000/register",this.registerForm.value).subscribe(data=>{
+    let data = this.registerForm.value
+    data['isadmin']=false
+    console.log(data)
+    this.httpClient.post<any>("http://localhost:3000/register",data).subscribe(data=>{
       alert("Signup Successful");
       this.registerForm.reset();
       this.router.navigate(['login']);
