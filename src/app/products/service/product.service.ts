@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { dataModel } from 'src/app/dashboard/dashboard/admin-dashboard/admin.model';
 import { Category } from 'src/app/site-layout/category';
 import { Product} from '../product';
 @Injectable({
@@ -26,6 +27,7 @@ export class ProductService {
     const baseUrl="http://localhost:3000/products/"+productId;
     return this.httpClient.put<Product>(baseUrl, productBody);
   }
+  
   deleteProduct(productId:any):Observable<Product>{
     const baseUrl="http://localhost:3000/products/"+productId;
     return this.httpClient.delete<Product>(baseUrl);

@@ -1,22 +1,141 @@
-<h4 style="text-align:center;">Registered Users</h4>
-<table class="table mt-5">
-    <thead>
-      <tr>
-        <th scope="col">Full Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Mobile</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of userData">
-        <td>{{data.fullname}}</td>
-        <td>{{data.email}}</td>
-        <td>{{data.mobile}}</td>
-        <td>
-          <!-- <button class="btn btn-info" (click)="editUserData(data)" >Edit</button> -->
-          <button class="btn btn-danger"(click)="deleteUserData(data)">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+<nav class="navbar navbar-light d-fixed">
+  <div class="container-fluid">
+    <h4>User Registered</h4>
+    <div class="d-flex">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="clickAddUser()">Add User</button>
+    </div>
+  </div>
+</nav>
+</div>
+<div class="container">
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th scope="col">User ID</th>
+      <th scope="col">Full Name</th>
+      <th scope="col"Email></th>
+      <th scope="col">Mobile No.</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of userData">
+      <td>{{data.id}}</td>
+      <td>{{data.fullname}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.mobile}}</td>
+      <td>
+        
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="onEdit(data)">Edit</button>
+        <button class="btn btn-danger mx-3" (click)="deleteUserData(data)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!-- Modal For Adding User-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add User Detail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="registerForm"(ngSubmit)="register()">
+            <!-- UserName input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Full name</label>
+              <input
+                type="text"
+                id="form1Example13"
+                class="form-control form-control-lg"
+                formControlName="fullname"
+              />
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Email address</label>
+              <input
+                type="email"
+                id="form1Example13"
+                class="form-control form-control-lg"
+                formControlName="email"
+              />
+            </div>
+            <!-- Mobile input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Mobile.No</label
+              >/label>
+              <input
+                type="number"
+                id="form1Example13"
+                class="form-control form-control-lg"
+                formControlName="mobile"
+              />
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary  btn-lg btn-block" (click)="register()">Add</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal For Updating User-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add User Detail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="registerForm"(ngSubmit)="register()">
+            <!-- UserName input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Full name</label>
+              <input
+                type="text"
+                id="form1Example13"
+                class="form-control form-control-lg"
+                formControlName="fullname"
+              />
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Email address</label>
+              <input
+                type="email"
+                id="form1Example13"
+                class="form-control form-control-lg"
+                formControlName="email"
+              />
+            </div>
+            <!-- Mobile input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Mobile.No</label
+              >/label>
+              <input
+                type="number"
+                id="form1Example13"
+                class="form-control form-control-lg"
+                formControlName="mobile"
+              />
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary  btn-lg btn-block" (click)="updateUser()">Update</button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>

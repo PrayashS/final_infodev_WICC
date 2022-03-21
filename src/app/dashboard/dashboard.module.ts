@@ -11,6 +11,8 @@ import { ProductsModule } from '../products/products.module';
 import { ProductAddComponent } from './dashboard/product-add/product-add.component';
 import { SiteLayoutModule } from '../site-layout/site-layout.module';
 import { ProductUpdateComponent } from './dashboard/product-update/product-update.component';
+import { AuthModule } from '../auth/auth.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ProductUpdateComponent } from './dashboard/product-update/product-updat
     CommonModule,
     DashboardRoutingModule,
     ProductsModule,
-    SiteLayoutModule
+    SiteLayoutModule,
+    AuthModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }
