@@ -2,11 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { throwError } from 'rxjs';
 import { productModel } from 'src/app/dashboard/dashboard/product-dashboard/product.model';
 import { MessageService } from 'src/app/products/service/message.service';
 import { ProductService } from 'src/app/products/service/product.service';
-import {} from './product.model';
 
 @Component({
   selector: 'app-product-dashboard',

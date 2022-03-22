@@ -27,8 +27,9 @@
       <td>{{data.mobile}}</td>
       <td>
         
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="onEdit(data)">Edit</button>
-        <button class="btn btn-danger mx-3" (click)="deleteUserData(data)">Delete</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="onEdit(data)"><i class="fas fa-edit"></i>
+          Edit</button>
+        <button class="btn btn-danger mx-3" (click)="deleteUserData(data)"><i class="fas fa-trash"></i> Delete</button>
       </td>
     </tr>
   </tbody>
@@ -68,7 +69,7 @@
             <!-- Mobile input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form1Example13">Mobile.No</label
-              >/label>
+              >
               <input
                 type="number"
                 id="form1Example13"
@@ -79,7 +80,7 @@
             <!-- Password input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form1Example13">Password</label
-              >/label>
+              >
               <input
                 type="text"
                 id="form1Example13"
@@ -89,7 +90,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary  btn-lg btn-block" (click)="register()">Add</button>
+              <button type="button" class="btn btn-primary" (click)="register()">Add</button>
             </div>
             
           </form>
@@ -131,7 +132,7 @@
             <!-- Mobile input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form1Example13">Mobile.No</label
-              >/label>
+              >
               <input
                 type="number"
                 id="form1Example13"
@@ -141,7 +142,7 @@
             </div>
             <div class="form-outline mb-4">
               <label class="form-label" for="form1Example13">Password</label
-              >/label>
+              >
               <input
                 type="text"
                 id="form1Example13"

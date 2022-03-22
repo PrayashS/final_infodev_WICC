@@ -1,0 +1,67 @@
+<app-header></app-header>
+<h2 class="h1-responsive font-weight-bold text-center my-4">Your Testimonial</h2>
+<div class="container mt-2">
+  <form [formGroup]="formStructure">
+    <ng-container formArrayName="details">
+      <ng-container
+        *ngFor="let lessnForm of details.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <b>{{ i + 1 }}</b>
+        <!--Name-->
+        <div class="col-5">
+          <label for="exampleInputEmail1" class="form-label">Write a Review</label>
+          <input
+            type="text"
+            class="form-control input-sm"
+            formControlName="name"
+            placeholder="Name"
+          />
+          <span *ngIf="details.controls[i].get('name')?.errors"
+            >Please provide your name
+          </span>
+        </div>
+        <!--Name Ends-->
+        <!--Comments-->
+        <div class="col-5">
+          <label for="exampleInputEmail1" class="form-label">Full Name</label>
+          <textarea
+            type="text"
+            class="form-control"
+            formControlName="comment"
+            placeholder="Write a review"
+          ></textarea>
+          <span *ngIf="details.controls[i].get('age')?.errors"
+            >Please provide your age
+          </span>
+        </div>
+        <!--Comments Ends-->
+
+        <button class="btn btn-danger" (click)="deleteComment(i)">Delete</button>
+        <br />
+      </ng-container>
+    </ng-container>
+    <div
+      *ngFor="
+        let lessnForm of details.controls;
+        let i = index;
+        let f = first;
+        let l = last
+      "
+      [formGroupName]="i"
+    >
+      <button
+        class="btn btn-primary"
+        (click)="addComment()"
+        type="submit"
+        [disabled]="details.controls[i].invalid"
+        *ngIf="l"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>
+<!-- {{ formStructure.value | json }} -->
+
