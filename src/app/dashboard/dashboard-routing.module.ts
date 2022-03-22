@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListOrderComponent } from '../orders/list-order/list-order.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductDashboardComponent } from './dashboard/product-dashboard/product-dashboard.component';
@@ -23,6 +24,9 @@ const routes: Routes = [
     { path: 'product-dashboard', 
     // canActivate:[AdmindashGuard],
     component:ProductDashboardComponent},
+    {
+      path: 'list-order', component:ListOrderComponent
+    }
   ]
 }
 ];
