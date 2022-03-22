@@ -8,6 +8,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import { CommentsComponent } from './comments/comments.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServicesComponent } from './services/services.component';
 
 
 
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     AboutUsComponent,
     ContactComponent,
-    CommentsComponent
+    CommentsComponent,
+    ServicesComponent
   ],
   imports: [
     CommonModule,

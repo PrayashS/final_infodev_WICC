@@ -1,0 +1,48 @@
+img {
+  height: auto;
+  width: auto;
+}
+.main-container1 {
+    margin: 5px 20px;
+    display: flex;
+  width: auto;
+  height: auto;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 50px 0px;
+  overflow: hidden;
+}
+.main-container2 {
+    margin: 5px 20px;
+    display: flex;
+  width: auto;
+  height: auto;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 0px 50px;
+  overflow: hidden;
+}
+.main-container3 {
+    margin: 5px 20px;
+    display: flex;
+  width: auto;
+  height: auto;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 50px 0px;
+  overflow: hidden;
+}
+.main-container4 {
+    margin: 5px 20px;
+    display: flex;
+  width: auto;
+  height: auto;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 0px 50px;
+  overflow: hidden;
+}
+
+.text-center{
+    margin: auto 5px;
+}
