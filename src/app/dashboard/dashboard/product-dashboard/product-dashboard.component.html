@@ -1,39 +1,370 @@
-<h1 style="text-align:center;">Product-Data</h1>
-<table class="table mt-5">
+<div class="container">
+  <nav class="navbar navbar-light d-fixed">
+    <div class="container-fluid">
+      <h4>User Registered</h4>
+      <div class="d-flex">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal1"
+          (click)="clickAddProduct()"
+        >
+          Add Product
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <table class="table table-striped mt-3">
     <thead>
       <tr>
+        <th scope="col">Product ID</th>
+        <th scope="col">category Id</th>
+        <!-- <th scope="col">Product Image</th> -->
         <th scope="col">Product Name</th>
-        <th scope="col">Category Id</th>
-        <th scope="col">Description</th>
-        <th scope="col">Rating</th>
-        <th scope="col">Product Image</th>
-        <th scope="col">Available</th>
         <th scope="col">Color</th>
-        <th scope="col">Review</th>
+        <th scope="col">Description</th>
         <th scope="col">Price</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Available</th>
+        <th scope="col">Review</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of productList">
-        <td>{{data.productName}}</td>
-        <td>{{data.categoryId}}</td>
-        <td>{{data.descriptions}}</td>
-        <td>{{data.rating}}</td>
-        <td>{{data.productImg}}</td>
-        <td>{{data.is_available}}</td>
-        <td>{{data.color}}</td>
-        <td>{{data.review}}</td>
-        <td>{{data.price}}</td>
-        <td class="d-flex gap-3">
-          <!-- <button class="btn btn-info" (click)="editUserData(data)" >Edit</button> -->
-          <!-- <button class="btn btn-danger"(click)="deleteUserData(data)">Delete</button> -->
-         
-          <a routerLink="/products/update-product/{{data.id}}">Update Product</a> 
-          <button (click)="deleteProduct(data.id)" class="btn btn-danger btn-sm">Delete</button>
-          
+      <tr *ngFor="let data of productData">
+        <td>{{ data.id }}</td>
+        <td>{{ data.categoryId }}</td>
+        <!-- <td>{{ data.productImg }}</td> -->
+        <td>{{ data.productname }}</td>
+        <td>{{ data.color }}</td>
+        <td>{{ data.descriptions }}</td>
+        <td>{{ data.price }}</td>
+        <td>{{ data.rating }}</td>
+        <td>{{ data.is_available }}</td>
+        <td>{{ data.review }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-info"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+            (click)="onEdit(data)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger mx-3" (click)="deleteProductData(data)">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
- 
+</div>
+
+<!-- Modal For Adding User-->
+<div
+  class="modal fade"
+  id="exampleModal1"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product Detail</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="productForm" (ngSubmit)="addNewProduct()">
+          <!-- Product Name -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Product Name</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="productname"
+            />
+          </div>
+          <!-- Color input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Color</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="color"
+            />
+          </div>
+          <!-- Description input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Description</label
+            >/label>
+            <textarea
+              type="number"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="descriptions"
+            ></textarea>
+          </div>
+          <!-- Image input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Product Image</label>
+            <input type="url" id="img" name="img" accept="image/*" formControlName="productImg"/>
+          </div>
+          <!-- Category input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13"
+              >Select Category</label
+            >
+            <select
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="categoryId"
+            >
+              <option selected value="">Choose...</option>
+              <option value="1">Electronics</option>
+              <option value="2">Men</option>
+              <option value="3">Women</option>
+              <option value="4">Home & Furniture</option>
+              <option value="5">Baby & Kids</option>
+            </select>
+          </div>
+          <!-- Price input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Price</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="price"
+            />
+          </div>
+          <!-- Rating input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Rating</label>
+            <select
+              id="form1Example13"
+              class="custom-select"
+              formControlName="rating"
+            >
+              <option selected value="">Choose...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <!-- Available input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Is Available</label>
+            <select
+              id="form1Example13"
+              class="custom-select"
+              formControlName="is_available"
+            >
+              <option selected value="">Choose...</option>
+              <option value="5">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <!-- Reviews input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Reviews</label>
+            <select
+              id="form1Example13"
+              class="custom-select"
+              formControlName="review"
+            >
+              <option selected value="">Choose...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="cancel"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              (click)="addNewProduct()"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal For Updating Product-->
+<div
+  class="modal fade"
+  id="exampleModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product Detail</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="productForm" (ngSubmit)="addNewProduct()">
+          <!-- Product Name -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Product Name</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="productname"
+            />
+          </div>
+          <!-- Color input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Color</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="color"
+            />
+          </div>
+          <!-- Description input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Description</label
+            >/label>
+            <textarea
+              type="number"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="descriptions"
+            ></textarea>
+          </div>
+          <!-- Image input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Product Image</label>
+            <input type="url" id="img" name="img" accept="image/*" formControlName="productImg"/>
+          </div>
+          <!-- Category input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13"
+              >Select Category</label
+            >
+            <select
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="categoryId"
+            >
+              <option selected value="">Choose...</option>
+              <option value="1">Electronics</option>
+              <option value="2">Men</option>
+              <option value="3">Women</option>
+              <option value="4">Home & Furniture</option>
+              <option value="5">Baby & Kids</option>
+            </select>
+          </div>
+          <!-- Price input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Price</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="price"
+            />
+          </div>
+          <!-- Rating input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Rating</label>
+            <select
+              id="form1Example13"
+              class="custom-select"
+              formControlName="rating"
+            >
+              <option selected value="">Choose...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <!-- Available input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Is Available</label>
+            <select
+              id="form1Example13"
+              class="custom-select"
+              formControlName="is_available"
+            >
+              <option selected value="">Choose...</option>
+              <option value="5">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <!-- Reviews input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Reviews</label>
+            <select
+              id="form1Example13"
+              class="custom-select"
+              formControlName="review"
+            >
+              <option selected value="">Choose...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="cancel"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              (click)="updateProduct()"
+            >
+              Update Product
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

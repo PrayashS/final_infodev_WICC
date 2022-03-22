@@ -1,42 +1,31 @@
 {
   "products": [
     {
-      "id": 4,
-      "productName": "shirt5",
-      "categoryId": 4,
-      "descriptions": "description five",
-      "price": 800,
-      "is_available": true,
-      "productImg": "http://localhost:4200/assets/images/5.jpg",
-      "rating": 4,
-      "review": 150,
-      "vendor_name": "abc shop",
-      "waranty": 1
+      "productId": 1,
+      "categoryId": "1",
+      "productname": "Iphone",
+      "descriptions": "128 GB",
+      "rating": "5",
+      "price": "9999",
+      "productImg": "https://static-01.daraz.com.np/p/44d255455e2dcf3be82be1c90ae85e2c.jpg",
+      "is_available": "5",
+      "color": "Blue",
+      "review": "5",
+      "quantity": "",
+      "total": "",
+      "id": 1
     },
     {
-      "id": 200,
-      "productName": "shirt10",
-      "categoryId": 5,
-      "descriptions": "description second",
-      "price": 400,
-      "is_available": true,
-      "productImg": "http://localhost:4200/assets/images/2.jpg",
-      "rating": 4,
-      "review": 150,
-      "vendor_name": "abc shop",
-      "waranty": 1
-    },
-    {
-      "productName": "prayash",
-      "categoryId": "5",
-      "color": "blue",
-      "descriptions": "khatra",
-      "productImg": "https://imgs.search.brave.com/VCT3ioxZ07lk6GPe0UuUfxVpNWygcNI5OgJIhMLdgW0/rs:fit:708:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC4y/UmxIbUZKTVM4Mm5l/dUU3QVNDVVZnSGFF/OSZwaWQ9QXBp",
-      "rating": "4",
-      "is_available": "1",
-      "price": "5000",
-      "review": "4",
-      "id": 214
+      "productname": "Iphone",
+      "color": "Blue",
+      "descriptions": "128 gb",
+      "productImg": "https://www.apple.com/v/iphone-13-pro/f/images/overview/design/finishes_1_alpine_green__bxgqurawflau_large.jpg",
+      "categoryId": "1",
+      "price": "999",
+      "rating": "5",
+      "is_available": "5",
+      "review": "5",
+      "id": 2
     }
   ],
   "comments": [
@@ -123,6 +112,30 @@
       "fullname": "HariPrasad",
       "email": "hari@gmail.com",
       "mobile": 1385132154
+    },
+    {
+      "fullname": "bhums",
+      "email": "bhums@gmail.com",
+      "mobile": 65465453216,
+      "password": null,
+      "isadmin": false,
+      "id": 6
+    },
+    {
+      "fullname": "Chy",
+      "email": "chy@gmail.com",
+      "mobile": 657453213,
+      "password": null,
+      "isadmin": false,
+      "id": 7
+    },
+    {
+      "fullname": "Rijen",
+      "email": "rijen@gmail.com",
+      "mobile": 984651231,
+      "password": "123456",
+      "isadmin": false,
+      "id": 8
     }
   ],
   "cart": [

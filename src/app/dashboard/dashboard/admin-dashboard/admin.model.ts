@@ -3,4 +3,5 @@ export class dataModel{
     fullname : string ='';
     email : string ='';
     mobile : string ='';
+    password : string = '';
 }

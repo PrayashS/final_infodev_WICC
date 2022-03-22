@@ -1,7 +1,21 @@
-td, h1{
+td, h4{
     color: #fff;
+    text-align: center;
 }
 th{
-    color:#fff;
+    text-align: center;
+    color:black;
+    background-color: #fff;
     font-size: large;
+}
+.col{
+    color: #fff;
+}
+nav{
+    background: none;
+}
+table{
+    background: rgb(141, 138, 138);
+    border: 2px solid black;
+    border-radius: 10px;
 }

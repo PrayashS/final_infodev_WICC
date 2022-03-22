@@ -108,11 +108,13 @@ export class AdminDashboardComponent implements OnInit {
     this.registerForm.controls['fullname'].setValue(row.fullname);
     this.registerForm.controls['email'].setValue(row.email);
     this.registerForm.controls['mobile'].setValue(row.mobile);
+    this.registerForm.controls['password'].setValue(row.password);
   }
   updateUser() {
     this.dataModelObj.fullname = this.registerForm.value.fullname;
     this.dataModelObj.email = this.registerForm.value.email;
     this.dataModelObj.mobile = this.registerForm.value.mobile;
+    this.dataModelObj.password = this.registerForm.value.password;
     this.api
       .updateData(this.dataModelObj.id, this.dataModelObj)
       .subscribe((res) => {
