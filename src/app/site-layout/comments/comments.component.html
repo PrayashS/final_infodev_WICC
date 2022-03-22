@@ -10,7 +10,7 @@
         <b>{{ i + 1 }}</b>
         <!--Name-->
         <div class="col-5">
-          <label for="exampleInputEmail1" class="form-label">Write a Review</label>
+          <label for="exampleInputEmail1" class="form-label">Your Name</label>
           <input
             type="text"
             class="form-control input-sm"
@@ -18,7 +18,7 @@
             placeholder="Name"
           />
           <span *ngIf="details.controls[i].get('name')?.errors"
-            >Please provide your name
+            style="color: red;">Please provide your name
           </span>
         </div>
         <!--Name Ends-->
@@ -32,7 +32,7 @@
             placeholder="Write a review"
           ></textarea>
           <span *ngIf="details.controls[i].get('age')?.errors"
-            >Please provide your age
+            style="color: red;">Please provide your age
           </span>
         </div>
         <!--Comments Ends-->

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
+import { ElementRef } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/products/service/auth.service';
 import { MessageService } from 'src/app/products/service/message.service';
@@ -10,15 +12,31 @@ import { MessageService } from 'src/app/products/service/message.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild('pass') pass !: ElementRef
 
   public loginForm!: FormGroup
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router,private authService:AuthService, private msgService: MessageService) { }
   id:any
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:[''],
-      password:['']
+      email:['', [Validators.required]],
+      password:['', [Validators.required]]
     });
+  }
+  get loginControl(){
+    return this.loginForm.controls;
+  }
+  showPassword(){
+    let type = this.pass.nativeElement.type
+    if(type==='password')
+    {
+      this.pass.nativeElement.type='text'
+    }
+    else{
+      this.pass.nativeElement.type='password'
+    }
+  
+ 
   }
   login(){
     if(this.loginForm.invalid){

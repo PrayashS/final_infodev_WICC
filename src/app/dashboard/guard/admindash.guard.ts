@@ -17,19 +17,20 @@ export class AdmindashGuard implements CanActivate {
       const token = this.authService.checkToken()
       if(token)
       {
-          return new Observable<boolean>(obs=>{
-            this.authService.adminOrNot(this.authService.getToken()).subscribe(res=>{
-            
-              if(res['isadmin'])
-              {
-                return true
-              }
-              else{
-                this.router.navigate(['/'])
-                return false
-              }
-            })
+        return new Observable<boolean>(obs=>{
+          this.authService.adminOrNot(this.authService.getToken()).subscribe(res=>{
+          
+            if(res['isadmin']===true)
+            {
+              
+              return true
+            }
+            else{
+              this.router.navigate(['/'])
+              return false
+            }
           })
+        })
       }
       else{
         this.router.navigate(['/'])

@@ -6,7 +6,7 @@
       "productname": "Iphone",
       "descriptions": "128 GB",
       "rating": "5",
-      "price": "9999",
+      "price": 9999,
       "productImg": "https://static-01.daraz.com.np/p/44d255455e2dcf3be82be1c90ae85e2c.jpg",
       "is_available": "5",
       "color": "Blue",
@@ -21,7 +21,7 @@
       "descriptions": "128 gb",
       "productImg": "https://www.apple.com/v/iphone-13-pro/f/images/overview/design/finishes_1_alpine_green__bxgqurawflau_large.jpg",
       "categoryId": "1",
-      "price": "999",
+      "price": 999,
       "rating": "5",
       "is_available": "5",
       "review": "5",
@@ -141,16 +141,32 @@
   "cart": [
     {
       "id": 1,
-      "productName": "shirt3",
-      "categoryId": 2,
-      "descriptions": "description third",
-      "price": 300,
-      "is_available": true,
-      "productImg": "http://localhost:4200/assets/images/3.jpg",
-      "rating": 4,
-      "review": 150,
-      "vendor_name": "abc shop",
-      "waranty": 1
+      "productId": 1,
+      "userId": 5,
+      "quantity": 1
+    }
+  ],
+  "order": [
+    {
+      "userId": "3",
+      "productId": 1,
+      "quantity": 1,
+      "status": "pending",
+      "id": 1
+    },
+    {
+      "userId": "3",
+      "productId": 1,
+      "quantity": 1,
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "userId": "3",
+      "productId": 2,
+      "quantity": 1,
+      "status": "pending",
+      "id": 3
     }
   ]
 }

@@ -6,9 +6,7 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
 import { ProductDashboardComponent } from './dashboard/product-dashboard/product-dashboard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideBarComponent } from './dashboard/side-bar/side-bar.component';
-import { HeaderComponent } from '../site-layout/header/header.component';
 import { ProductsModule } from '../products/products.module';
-import { ProductAddComponent } from './dashboard/product-add/product-add.component';
 import { SiteLayoutModule } from '../site-layout/site-layout.module';
 import { ProductUpdateComponent } from './dashboard/product-update/product-update.component';
 import { AuthModule } from '../auth/auth.module';
@@ -21,7 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductDashboardComponent,
     DashboardComponent,
     SideBarComponent,
-    ProductAddComponent,
     ProductUpdateComponent,
     
   ],

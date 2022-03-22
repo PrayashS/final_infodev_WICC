@@ -1,6 +1,3 @@
-h1{
-    color: #fff;
-}
 
 .divider:after,
 .divider:before {
@@ -8,7 +5,4 @@ h1{
   flex: 1;
   height: 1px;
   background: #eee;
-}
-label{
-    color: #fff;
 }

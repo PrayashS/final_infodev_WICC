@@ -20,13 +20,14 @@ export class AdminGuard implements CanActivateChild {
         return new Observable<boolean>(obs=>{
           this.authService.adminOrNot(this.authService.getToken()).subscribe(res=>{
           
-            if(res['isadmin'])
+            if(res['isadmin']===true)
             {
-              return true
+             
+               obs.next(true)
             }
             else{
               this.router.navigate(['/'])
-              return false
+               obs.next(false)
             }
           })
         })

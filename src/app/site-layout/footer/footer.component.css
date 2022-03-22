@@ -188,3 +188,8 @@ p {
       cursor: pointer;
       background: #FA6742;
       border-color: #FA6742; }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }

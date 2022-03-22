@@ -21,6 +21,21 @@
               class="form-control form-control-lg"
               formControlName="email"
             />
+            <span
+              *ngIf="
+                loginControl['email'].errors &&
+                (loginControl['email'].touched || loginControl['email'].dirty)
+              "
+            >
+              <span
+                *ngIf="loginControl['email'].errors?.['required']"
+                class="text-danger"
+                >Please provide your email address</span
+              >
+              <span *ngIf="loginControl['email'].errors?.['email']" class="text-danger"
+                >Please enter a valid email address</span
+              >
+            </span>
           </div>
 
           <!-- Password input -->
@@ -32,6 +47,19 @@
               class="form-control form-control-lg"
               formControlName="password"
             />
+            <span
+              *ngIf="
+                loginControl['password'].errors &&
+                (loginControl['password'].touched ||
+                  loginControl['password'].dirty)
+              "
+            >
+              <span
+                *ngIf="loginControl['password'].errors?.['required']"
+                class="text-danger"
+                >Please provide your password</span
+              >
+            </span>
           </div>
 
           <div class="d-flex justify-content-around align-items-center mb-4">
@@ -42,40 +70,18 @@
                 type="checkbox"
                 value=""
                 id="form1Example3"
-                checked
+                (click)="showPassword()"
               />
-              <label class="form-check-label" for="form1Example3">
-                Remember me
+              <label class="form-label" for="form1Example3">
+                &nbsp; Show Password
               </label>
             </div>
-            <a href="#!">Forgot password?</a>
           </div>
 
           <!-- Submit button -->
           <button type="submit" class="btn btn-primary btn-lg btn-block">
             Sign in
           </button>
-
-          <div class="divider d-flex align-items-center my-4">
-            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-          </div>
-
-          <a
-            class="btn btn-primary btn-lg btn-block"
-            style="background-color: #3b5998"
-            href="#!"
-            role="button"
-          >
-            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
-          </a>
-          <a
-            class="btn btn-primary btn-lg btn-block"
-            style="background-color: #55acee"
-            href="#!"
-            role="button"
-          >
-            <i class="fab fa-twitter me-2"></i>Continue with Twitter</a
-          >
         </form>
         <a routerLink="/auth/register">New user? Click to Register!</a>
       </div>

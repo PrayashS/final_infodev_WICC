@@ -21,6 +21,18 @@
               class="form-control form-control-lg"
               formControlName="fullname"
             />
+            <span
+              *ngIf="
+                registerControl['fullname'].errors &&
+                (registerControl['fullname'].touched || registerControl['fullname'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['fullname'].errors?.['required']"
+                class="text-danger"
+                >Username field is required</span
+              >
+            </span>
           </div>
           <!-- Email input -->
           <div class="form-outline mb-4">
@@ -31,17 +43,43 @@
               class="form-control form-control-lg"
               formControlName="email"
             />
+            <span
+              *ngIf="
+                registerControl['email'].errors &&
+                (registerControl['email'].touched || registerControl['email'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['email'].errors?.['required']"
+                class="text-danger"
+                >Please provide your email address</span
+              >
+              <span *ngIf="registerControl['email'].errors?.['email']" class="text-danger"
+                >Please provide a valid email address</span
+              >
+            </span>
           </div>
           <!-- Mobile input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="form1Example13">Mobile.No</label
-            >/label>
+            <label class="form-label" for="form1Example13">Mobile.No</label>
             <input
               type="number"
               id="form1Example13"
               class="form-control form-control-lg"
               formControlName="mobile"
             />
+            <span
+              *ngIf="
+                registerControl['mobile'].errors && registerControl['mobile'].errors['minLength']
+                (registerControl['mobile'].touched || registerControl['mobile'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['mobile'].errors?.['required']"
+                class="text-danger"
+                >Please provide your 10 digit mobile number</span
+              >
+            </span>
           </div>
 
           <!-- Password input -->
@@ -53,6 +91,18 @@
               class="form-control form-control-lg"
               formControlName="password"
             />
+            <span
+              *ngIf="
+                registerControl['password'].errors && registerControl['password'].errors['minLength']
+                (registerControl['password'].touched || registerControl['password'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['password'].errors?.['required']"
+                class="text-danger"
+                >Please provide your with minimum 6 character</span
+              >
+            </span>
           </div>
 
           <div class="d-flex justify-content-around align-items-center mb-4">
