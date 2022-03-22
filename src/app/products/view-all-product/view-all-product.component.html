@@ -43,12 +43,12 @@
             <div class="col mb-5" *ngFor="let products of productList">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="{{products.productImg}}" alt="{{products.productName}}" />
+                    <img class="card-img-top" src="{{products.productImg}}" alt="{{products.productname}}" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder display-6"><a routerLink="/products/view-product/{{products.id}}">{{products.productName}}</a></h5>
+                            <h5 class="fw-bolder display-6"><a routerLink="/products/view-product/{{products.id}}">{{products.productname}}</a></h5>
                             <!--Product Description-->
                             <p>{{products.descriptions}}</p>
                             <!-- Product price-->
