@@ -1,6 +1,9 @@
 # Frontend
 WICC
 Run JSON server from assets/data *****************************************
+// admin account 
+email: ram@gmail.com
+password: 123456
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
