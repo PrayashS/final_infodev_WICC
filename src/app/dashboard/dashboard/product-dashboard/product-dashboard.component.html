@@ -22,7 +22,7 @@
       <tr>
         <th scope="col">Product ID</th>
         <th scope="col">category Id</th>
-        <!-- <th scope="col">Product Image</th> -->
+        <th scope="col">Product Image</th>
         <th scope="col">Product Name</th>
         <th scope="col">Color</th>
         <th scope="col">Description</th>
@@ -37,6 +37,9 @@
       <tr *ngFor="let data of productData">
         <td>{{ data.id }}</td>
         <td>{{ data.categoryId }}</td>
+        <td><img
+          src="{{data.productImg}}"
+          class="img-fluid rounded-3" alt="Cotton T-shirt"></td>
         <!-- <td>{{ data.productImg }}</td> -->
         <td>{{ data.productname }}</td>
         <td>{{ data.color }}</td>

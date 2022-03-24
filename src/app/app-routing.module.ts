@@ -17,7 +17,7 @@ const routes: Routes = [
   canActivateChild:[AdminGuard],
    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
-  { path: 'order', component: ListOrderComponent },
+  { path: 'order', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)},
   { path: 'aboutus', component:AboutUsComponent},
   { path: 'comments', component:CommentsComponent},
   { path: 'services', component: ServicesComponent}
