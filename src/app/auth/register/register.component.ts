@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { ViewChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'src/app/products/service/message.service';
 @Component({
@@ -11,23 +9,25 @@ import { MessageService } from 'src/app/products/service/message.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  @ViewChild('pass') pass !: ElementRef
   public registerForm!: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
     private router: Router,
     private msgService: MessageService
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.registerForm = this.formBuilder.group({
       fullname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       mobile: ['', [Validators.required, Validators.minLength(10)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.min(6)]],
     });
   }
+
+  ngOnInit(): void {
+    
+  }
+
   get registerControl() {
     return this.registerForm.controls;
   }

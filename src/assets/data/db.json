@@ -136,6 +136,22 @@
       "password": "123456",
       "isadmin": false,
       "id": 8
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "mobile": 54,
+      "password": "",
+      "isadmin": false,
+      "id": 9
+    },
+    {
+      "fullname": "Prayash",
+      "email": "s@gmail.com",
+      "mobile": 3212,
+      "password": "1234",
+      "isadmin": false,
+      "id": 10
     }
   ],
   "cart": [

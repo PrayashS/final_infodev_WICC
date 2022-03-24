@@ -24,13 +24,14 @@
             <span
               *ngIf="
                 registerControl['fullname'].errors &&
-                (registerControl['fullname'].touched || registerControl['fullname'].dirty)
+                (registerControl['fullname'].touched ||
+                  registerControl['fullname'].dirty)
               "
             >
               <span
                 *ngIf="registerControl['fullname'].errors?.['required']"
                 class="text-danger"
-                >Username field is required</span
+                >Full field is required</span
               >
             </span>
           </div>
@@ -46,7 +47,8 @@
             <span
               *ngIf="
                 registerControl['email'].errors &&
-                (registerControl['email'].touched || registerControl['email'].dirty)
+                (registerControl['email'].touched ||
+                  registerControl['email'].dirty)
               "
             >
               <span
@@ -54,7 +56,9 @@
                 class="text-danger"
                 >Please provide your email address</span
               >
-              <span *ngIf="registerControl['email'].errors?.['email']" class="text-danger"
+              <span
+                *ngIf="registerControl['email'].errors?.['email']"
+                class="text-danger"
                 >Please provide a valid email address</span
               >
             </span>
@@ -70,8 +74,9 @@
             />
             <span
               *ngIf="
-                registerControl['mobile'].errors && registerControl['mobile'].errors['minLength']
-                (registerControl['mobile'].touched || registerControl['mobile'].dirty)
+                registerControl['mobile'].errors &&
+                (registerControl['mobile'].touched ||
+                  registerControl['mobile'].dirty || registerControl['mobile'].errors['minLength'])
               "
             >
               <span
@@ -93,8 +98,9 @@
             />
             <span
               *ngIf="
-                registerControl['password'].errors && registerControl['password'].errors['minLength']
-                (registerControl['password'].touched || registerControl['password'].dirty)
+                registerControl['password'].errors &&
+                (registerControl['password'].touched ||
+                  registerControl['password'].dirty || registerControl['password'].errors['min'])
               "
             >
               <span
@@ -105,8 +111,8 @@
             </span>
           </div>
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-lg btn-block">
-            Sign in
+          <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="registerForm.invalid" >
+            Register
           </button>
         </form>
         <a routerLink="/auth/login">Already Registered? Click to Login!</a>
