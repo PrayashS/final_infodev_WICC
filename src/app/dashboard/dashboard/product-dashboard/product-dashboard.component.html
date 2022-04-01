@@ -97,6 +97,19 @@
               class="form-control form-control-lg"
               formControlName="productname"
             />
+            <span
+              *ngIf="
+                productControl['productname'].errors &&
+                (productControl['productname'].touched ||
+                  productControl['productname'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['productname'].errors?.['required']"
+                class="text-danger"
+                >Please provide your product name</span
+              >
+            </span>
           </div>
           <!-- Color input -->
           <div class="form-outline mb-4">
@@ -107,6 +120,19 @@
               class="form-control form-control-lg"
               formControlName="color"
             />
+            <span
+              *ngIf="
+                productControl['color'].errors &&
+                (productControl['color'].touched ||
+                  productControl['color'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['color'].errors?.['required']"
+                class="text-danger"
+                >Please provide product color</span
+              >
+            </span>
           </div>
           <!-- Description input -->
           <div class="form-outline mb-4">
@@ -118,11 +144,37 @@
               class="form-control form-control-lg"
               formControlName="descriptions"
             ></textarea>
+            <span
+              *ngIf="
+                productControl['descriptions'].errors &&
+                (productControl['descriptions'].touched ||
+                  productControl['descriptions'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['descriptions'].errors?.['required']"
+                class="text-danger"
+                >Please provide your product description</span
+              >
+            </span>
           </div>
           <!-- Image input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form1Example13">Product Image</label>
             <input type="url" id="img" name="img" accept="image/*" formControlName="productImg"/>
+            <span
+              *ngIf="
+                productControl['productImg'].errors &&
+                (productControl['productImg'].touched ||
+                  productControl['productImg'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['productImg'].errors?.['required']"
+                class="text-danger"
+                >Please provide your product image</span
+              >
+            </span>
           </div>
           <!-- Category input -->
           <div class="form-outline mb-4">
@@ -141,16 +193,42 @@
               <option value="4">Home & Furniture</option>
               <option value="5">Baby & Kids</option>
             </select>
+            <span
+              *ngIf="
+                productControl['categoryId'].errors &&
+                (productControl['categoryId'].touched ||
+                  productControl['categoryId'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['categoryId'].errors?.['required']"
+                class="text-danger"
+                >Please select product category</span
+              >
+            </span>
           </div>
           <!-- Price input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form1Example13">Price</label>
             <input
-              type="text"
               id="form1Example13"
               class="form-control form-control-lg"
               formControlName="price"
+              type="number"
             />
+            <span
+              *ngIf="
+                productControl['price'].errors &&
+                (productControl['price'].touched ||
+                  productControl['price'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['price'].errors?.['required']"
+                class="text-danger"
+                >Please provide your product price</span
+              >
+            </span>
           </div>
           <!-- Rating input -->
           <div class="form-outline mb-4">
@@ -167,6 +245,19 @@
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
+            <span
+              *ngIf="
+                productControl['rating'].errors &&
+                (productControl['rating'].touched ||
+                  productControl['rating'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['rating'].errors?.['required']"
+                class="text-danger"
+                >Please provide your product rating</span
+              >
+            </span>
           </div>
           <!-- Available input -->
           <div class="form-outline mb-4">
@@ -180,6 +271,19 @@
               <option value="5">Yes</option>
               <option value="0">No</option>
             </select>
+            <span
+              *ngIf="
+                productControl['is_available'].errors &&
+                (productControl['is_available'].touched ||
+                  productControl['is_available'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['is_available'].errors?.['required']"
+                class="text-danger"
+                >Please select your product availability</span
+              >
+            </span>
           </div>
           <!-- Reviews input -->
           <div class="form-outline mb-4">
@@ -196,6 +300,19 @@
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
+            <span
+              *ngIf="
+                productControl['review'].errors &&
+                (productControl['review'].touched ||
+                  productControl['review'].dirty)
+              "
+            >
+              <span
+                *ngIf="productControl['review'].errors?.['required']"
+                class="text-danger"
+                >Please provide your product review</span
+              >
+            </span>
           </div>
           <div class="modal-footer">
             <button
@@ -209,7 +326,7 @@
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block"
-              (click)="addNewProduct()"
+              (click)="addNewProduct()" [disabled]="productForm.invalid"
             >
               Add
             </button>

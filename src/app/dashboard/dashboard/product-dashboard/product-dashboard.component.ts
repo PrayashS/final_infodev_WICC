@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { productModel } from 'src/app/dashboard/dashboard/product-dashboard/product.model';
 import { MessageService } from 'src/app/products/service/message.service';
@@ -28,20 +28,23 @@ export class ProductDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
-      productname:[''],
-      color:[''],
-      descriptions:[''],
-      productImg:[''],
-      categoryId: [''],
-      price:[''],
-      rating:[''],
-      is_available:[''],
-      review:[''],
+      productname:['', [Validators.required]],
+      color:['', [Validators.required]],
+      descriptions:['', [Validators.required]],
+      productImg:['', [Validators.required]],
+      categoryId: ['', [Validators.required]],
+      price:['', [Validators.required]],
+      rating:['', [Validators.required]],
+      is_available:['', [Validators.required]],
+      review:['', [Validators.required]],
     });
     this.getProductData();
   }
   clickAddProduct(){
     this.productForm.reset();
+  }
+  get productControl() {
+    return this.productForm.controls;
   }
 
   addNewProduct(){

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/products/service/admin.service';
 import { MessageService } from 'src/app/products/service/message.service';
@@ -57,16 +57,19 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      fullname: [''],
-      email: [''],
-      mobile: [''],
-      password: [''],
+      fullname: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      mobile: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
     this.getUserData();
   }
 
   clickAddUser(){
     this.registerForm.reset();
+  }
+  get registerControl() {
+    return this.registerForm.controls;
   }
 
   register() {

@@ -5,7 +5,7 @@ export class productModel {
     productname: string = '';
     descriptions: string = '';
     rating: string = '';
-    price: string = '';
+    price: number = 0;
     productImg: string = '';
     is_available: string = '';
     color: string = '';

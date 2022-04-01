@@ -1,168 +1,282 @@
 <div class="container">
-  <input class="form-control me-2" type="search" placeholder="Search by name" aria-label="Search" [(ngModel)]="search">
-  
-<nav class="navbar navbar-light d-fixed">
-  <br><br>
-  <div class="container-fluid">
-    <h4>User Registered</h4>
+  <input
+    class="form-control me-2"
+    type="search"
+    placeholder="Search by name"
+    aria-label="Search"
+    [(ngModel)]="search"
+  />
 
-    
-    <div class="d-flex">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="clickAddUser()">Add User</button>
+  <nav class="navbar navbar-light d-fixed">
+    <br /><br />
+    <div class="container-fluid">
+      <h4>User Registered</h4>
+
+      <div class="d-flex">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal1"
+          (click)="clickAddUser()"
+        >
+          Add User
+        </button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </div>
 <div class="container">
-<table class="table table-striped mt-3">
-  <thead>
-    <tr>
-      <th scope="col">User ID</th>
-      <th scope="col">Full Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Mobile No.</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let data of userData | filter: search ">
-      <td>{{data.id}}</td>
-      <td>{{data.fullname}}</td>
-      <td>{{data.email}}</td>
-      <td>{{data.mobile}}</td>
-      <td>
-        
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="onEdit(data)"><i class="fas fa-edit"></i>
-          Edit</button>
-        <button class="btn btn-danger mx-3" (click)="deleteUserData(data)"><i class="fas fa-trash"></i> Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th scope="col">User ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of userData | filter: search">
+        <td>{{ data.id }}</td>
+        <td>{{ data.fullname }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-info"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+            (click)="onEdit(data)"
+          >
+            <i class="fas fa-edit"></i> Edit
+          </button>
+          <button class="btn btn-danger mx-3" (click)="deleteUserData(data)">
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <!-- Modal For Adding User-->
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal1"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add User Detail</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-          <form [formGroup]="registerForm"(ngSubmit)="register()">
-            <!-- UserName input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Full name</label>
-              <input
-                type="text"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="fullname"
-              />
-            </div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Email address</label>
-              <input
-                type="email"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="email"
-              />
-            </div>
-            <!-- Mobile input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Mobile.No</label
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <!-- UserName input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Full name</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="fullname"
+            />
+            <span
+              *ngIf="
+                registerControl['fullname'].errors &&
+                (registerControl['fullname'].touched ||
+                  registerControl['fullname'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['fullname'].errors?.['required']"
+                class="text-danger"
+                >Full field is required</span
               >
-              <input
-                type="number"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="mobile"
-              />
-            </div>
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Password</label
+            </span>
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Email address</label>
+            <input
+              type="email"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="email"
+            />
+            <span
+              *ngIf="
+                registerControl['email'].errors &&
+                (registerControl['email'].touched ||
+                  registerControl['email'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['email'].errors?.['required']"
+                class="text-danger"
+                >Please provide your email address</span
               >
-              <input
-                type="text"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="password"
-              />
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" (click)="register()">Add</button>
-            </div>
-            
-          </form>
-        </div>
+              <span
+                *ngIf="registerControl['email'].errors?.['email']"
+                class="text-danger"
+                >Please provide a valid email address</span
+              >
+            </span>
+          </div>
+          <!-- Mobile input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Mobile.No</label>
+            <input
+              type="number"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="mobile"
+            />
+            <span
+              *ngIf="
+                registerControl['mobile'].errors &&
+                (registerControl['mobile'].touched ||
+                  registerControl['mobile'].dirty)
+              "
+            >
+              <span
+                *ngIf="registerControl['mobile'].errors?.['required']"
+                class="text-danger"
+                >Please provide your 10 digit mobile number</span
+              >
+            </span>
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Password</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="password"
+            />
+            <span
+              *ngIf="
+                registerControl['password'].errors &&
+                (registerControl['password'].touched ||
+                  registerControl['password'].dirty )
+              "
+            >
+              <span
+                *ngIf="registerControl['password'].errors?.['required']"
+                class="text-danger"
+                >Please provide your with minimum 6 character</span
+              >
+            </span>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="cancel"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" (click)="register()" [disabled]="registerForm.invalid">
+              Add
+            </button>
+          </div>
+        </form>
       </div>
-      
     </div>
   </div>
-  <!-- Modal For Updating User-->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+<!-- Modal For Updating User-->
+<div
+  class="modal fade"
+  id="exampleModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add User Detail</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-          <form [formGroup]="registerForm"(ngSubmit)="register()">
-            <!-- UserName input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Full name</label>
-              <input
-                type="text"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="fullname"
-              />
-            </div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Email address</label>
-              <input
-                type="email"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="email"
-              />
-            </div>
-            <!-- Mobile input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Mobile.No</label
-              >
-              <input
-                type="number"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="mobile"
-              />
-            </div>
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form1Example13">Password</label
-              >
-              <input
-                type="text"
-                id="form1Example13"
-                class="form-control form-control-lg"
-                formControlName="password"
-              />
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary  btn-lg btn-block" (click)="updateUser()">Update</button>
-            </div>
-            
-          </form>
-        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <!-- UserName input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Full name</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="fullname"
+            />
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Email address</label>
+            <input
+              type="email"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="email"
+            />
+          </div>
+          <!-- Mobile input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Mobile.No</label>
+            <input
+              type="number"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="mobile"
+            />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Password</label>
+            <input
+              type="text"
+              id="form1Example13"
+              class="form-control form-control-lg"
+              formControlName="password"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="cancel"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block"
+              (click)="updateUser()"
+            >
+              Update
+            </button>
+          </div>
+        </form>
       </div>
-      
     </div>
   </div>
+</div>
