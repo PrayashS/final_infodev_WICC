@@ -16,16 +16,52 @@
       "id": 1
     },
     {
-      "productname": "Iphone",
+      "productname": "Shirt",
       "color": "Blue",
-      "descriptions": "128 gb",
-      "productImg": "https://www.apple.com/v/iphone-13-pro/f/images/overview/design/finishes_1_alpine_green__bxgqurawflau_large.jpg",
-      "categoryId": "1",
-      "price": 999,
+      "descriptions": "2XL",
+      "productImg": "https://static-01.daraz.com.np/p/9136b3f182619f7ba556b3cf147a8931.jpg",
+      "categoryId": "2",
+      "price": "300",
       "rating": "5",
       "is_available": "5",
       "review": "5",
-      "id": 2
+      "id": 3
+    },
+    {
+      "productname": "Lehenga",
+      "color": "Black",
+      "descriptions": "Free Size",
+      "productImg": "https://static-01.daraz.com.np/p/cc137f1b76a8871420d3e5917dd55c1c.jpg",
+      "categoryId": "3",
+      "price": "500",
+      "rating": "5",
+      "is_available": "5",
+      "review": "4",
+      "id": 4
+    },
+    {
+      "productname": "Gaming Chair",
+      "color": "Red",
+      "descriptions": "Strong",
+      "productImg": "https://static-01.daraz.com.np/p/bd01e5c71c42b2ea70ec2bb49aa1ab0c.jpg",
+      "categoryId": "4",
+      "price": "2000",
+      "rating": "4",
+      "is_available": "5",
+      "review": "5",
+      "id": 5
+    },
+    {
+      "productname": "Party Skirt",
+      "color": "Red",
+      "descriptions": "1 XL",
+      "productImg": "https://static-01.daraz.com.np/p/e87fddf696dafce1ad3a78002001964e.jpg",
+      "categoryId": "5",
+      "price": "200",
+      "rating": "5",
+      "is_available": "5",
+      "review": "5",
+      "id": 6
     }
   ],
   "comments": [
@@ -160,6 +196,12 @@
       "productId": 1,
       "userId": 5,
       "quantity": 1
+    },
+    {
+      "productId": 1,
+      "quantity": 1,
+      "userId": "1",
+      "id": 2
     }
   ],
   "order": [
@@ -178,11 +220,11 @@
       "id": 2
     },
     {
-      "userId": "3",
-      "productId": 2,
+      "userId": "1",
+      "productId": 1,
       "quantity": 1,
       "status": "pending",
-      "id": 3
+      "id": 4
     }
   ]
 }

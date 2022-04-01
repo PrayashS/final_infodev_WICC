@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CartRoutingModule } from './cart-routing.module';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { SiteLayoutModule } from '../site-layout/site-layout.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
   imports: [
     CommonModule,
     CartRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SiteLayoutModule
   ]
 })
 export class CartModule { }

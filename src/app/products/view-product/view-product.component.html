@@ -1,6 +1,6 @@
 
 <div class="card mt-4">
-    <img  alt="" class="card-img-top responsive" src="{{productData.productImg}}" alt="">
+    <img  alt="" class="img-fluid" src="{{productData.productImg}}" alt="">
     <div class="card-body">
         <h3 class="card-title">{{productData.productname}}</h3>
        
@@ -8,7 +8,7 @@
         <a (click)="deleteProduct(productData.id)">Dekete Product</a>
         <h4>{{productData.price}}</h4>
         <p class="card-text">{{productData.descriptions}}.</p>
-        <span class="text-warining">{{productData.rating}} stars</span>
+        <span class="d-flex justify-content-center small text-warning mb-2">{{productData.rating}} stars</span>
 
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
             <div class="text-center" ><button class="btn btn-outline-dark mt-auto" (click)="addtocart(productData.id)">Add To Cart</button></div>

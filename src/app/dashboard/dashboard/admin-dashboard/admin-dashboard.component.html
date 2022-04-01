@@ -1,7 +1,12 @@
 <div class="container">
+  <input class="form-control me-2" type="search" placeholder="Search by name" aria-label="Search" [(ngModel)]="search">
+  
 <nav class="navbar navbar-light d-fixed">
+  <br><br>
   <div class="container-fluid">
     <h4>User Registered</h4>
+
+    
     <div class="d-flex">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="clickAddUser()">Add User</button>
     </div>
@@ -20,7 +25,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of userData">
+    <tr *ngFor="let data of userData | filter: search ">
       <td>{{data.id}}</td>
       <td>{{data.fullname}}</td>
       <td>{{data.email}}</td>

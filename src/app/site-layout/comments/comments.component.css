@@ -1,3 +1,12 @@
 .conainer{
     background-color: blue;
 }
+/* .add-btn{
+    display: inline;
+    margin: 2px;
+    padding: 2px;
+} */
+.btn{
+    display: inline;
+    
+}

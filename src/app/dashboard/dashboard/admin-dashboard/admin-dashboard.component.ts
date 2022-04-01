@@ -40,6 +40,8 @@ export class AdminDashboardComponent implements OnInit {
   //     })
   //     }
   //   }
+  filteredString!: any
+  search=""
   userID: number = 0;
   userDetails: dataModel | any;
   dataModelObj: dataModel = new dataModel();

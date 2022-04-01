@@ -10,7 +10,8 @@ import { ProductsModule } from '../products/products.module';
 import { SiteLayoutModule } from '../site-layout/site-layout.module';
 import { ProductUpdateComponent } from './dashboard/product-update/product-update.component';
 import { AuthModule } from '../auth/auth.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     SideBarComponent,
     ProductUpdateComponent,
+    FilterPipe,
     
   ],
   imports: [
@@ -28,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductsModule,
     SiteLayoutModule,
     AuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
